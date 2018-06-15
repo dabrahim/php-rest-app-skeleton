@@ -1,0 +1,6 @@
+{
+    "require": {
+        "klein/klein": "^2.1",
+        "firebase/php-jwt": "^5.0"
+    }
+}

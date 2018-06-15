@@ -1,0 +1,50 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User.class: user
+ * Date: 6/15/2018
+ * Time: 5:03 PM
+ */
+
+/**
+ * Here goes the list of your app's 'sections'
+ *
+ * Let's consider for example the /users/5 endpoint
+ * /user would be the section and 5 the action or an argument
+ *
+ * Example :
+ * const SECTIONS = array(
+ *  'users',
+ *  'products'
+ *  );
+ * */
+const SECTIONS = array(
+);
+
+/**
+ * This one is useful when you're working locally
+ * and your project's root folder is different from
+ * the server's one. You would add the path to your
+ * directory below
+ *
+ * Example :
+ * Let's say your project is located in in C:/wamp64/www/myproject
+ * Whereas server root directory is C:wamp64/www then you would have
+ * const BASE_DIR = myproject/
+ */
+const BASE_DIR = '';
+
+/**
+ * Not used yet but will serve for hiding technical
+ * errors when the app is deployed
+ */
+const DEBUG = true;
+
+const DATABASE_CONFIG = array(
+    'SGBD' => 'mysql',
+    'HOST' => 'localhost',
+    'DATABASE' => '',
+    'USER' => 'root',
+    'PASSWORD' => ''
+);
+
