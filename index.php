@@ -14,6 +14,18 @@ $klein->respond(function ($request, $response, $service, $app) {
     $app->register('someMethod', function () {
        return 'some result';
     });
+
+    $app->register('getToken', function () {
+        $token = null;
+        $headers = apache_request_headers();
+        if(isset($headers['Authorization'])){
+            $token = explode(' ', $headers['Authorization'])[1];
+            return $token;
+        } else {
+            throw new Exception("The token wasn't correctly inserted in the HTTP header.");
+        }
+    });
+
 });
 
 /**

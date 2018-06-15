@@ -13,6 +13,7 @@
  *  );
  * */
 const SECTIONS = array(
+    'sample'
 );
 
 /**
@@ -26,7 +27,7 @@ const SECTIONS = array(
  * Whereas server root directory is C:wamp64/www then you would have
  * const BASE_DIR = myproject/
  */
-const BASE_DIR = '';
+const BASE_DIR = 'rest-app-skeleton/';
 
 /**
  * Not used yet but will serve for hiding technical
@@ -42,3 +43,8 @@ const DATABASE_CONFIG = array(
     'PASSWORD' => ''
 );
 
+/**
+ * Your jwt private signature key
+ * The HMAC SHA256 Algorith will be used to sign your tokens
+ */
+const SIGNATURE_KEY = "Put a strong key here";
