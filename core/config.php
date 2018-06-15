@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User.class: user
- * Date: 6/15/2018
- * Time: 5:03 PM
- */
 
 /**
  * Here goes the list of your app's 'sections'

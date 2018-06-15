@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User.class: USER
- * Date: 4/3/2018
- * Time: 12:04 PM
- */
 
 class CustomPDO {
     private static $_instance;
