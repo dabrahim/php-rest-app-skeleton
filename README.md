@@ -109,5 +109,49 @@ class UserService implements UserDAO {
 
 Then, you can for instanciate the `User` class from any controller. The framework automatically handles the imports so you won't have to do it manually anymore.
 
+##Examples
+Let's consider this controller under the **users** section
+```php
+$this->respond('POST', '/login', function ($request, $response, $service) {
+    $result = array(
+      'success' => false
+    );
+
+    extract( $request->params() );
+
+    if ( isset($login) && isset($password) ){
+        if($login === 'guest' && $password === 'secret') {
+            $result['success'] = true;
+
+            /**
+            * Setting up the payload
+            */
+            $payload = array(
+              'login' => $login,
+              'role' => 'simple-user'
+            );
+
+            /**
+            * Generating the signed token
+            */
+            $result['token'] = $service->generateToken( $payload );
+        } else {
+            $result['message'] = "Login or password incorrect";
+        }
+    } else {
+        $result['message'] = "login and password mandatory";
+    }
+
+    $response->json( $result );
+});
+```
+An example of bad request to **your-hostname/users/login** would give
+```json
+{
+    "success": false,
+    "message": "Error decoding the token: Signature verification failed"
+}
+```
+
 ## Contribution
 The project is still under developpement so feel free to send a fork request for adding new features.
