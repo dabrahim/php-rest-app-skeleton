@@ -56,7 +56,7 @@ Is the project is ready to be deployed, then leave it's value to an empty string
 The `DEBUG` constant which is by default true tells to the framework wether you're in developpement mode or in deployement mode. It prevents from giving sensitive informations to the user when the API is deployed.
 
 
-The `LOG_REQUESTS` indicates wether all the received requests should be logged to the database (if it's correctly set up) or not. It defautls to true and automatically creates the required tables into the database.
+The `LOG_REQUESTS` indicates wether all the received requests should be logged to the database (if it's correctly set up) or not. It defaults to true and automatically creates the required tables into the database.
 
 
 The `DATABASE_CONFIG` indicates the database configuration. You should provide all the required informations if you want to connect a database to your application. 
