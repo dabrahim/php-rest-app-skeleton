@@ -13,7 +13,7 @@ It uses [Klein](https://github.com/klein/klein.php) library as it's internal rou
 ## Basic configurations
 Before you start using this framework, you sould edit the configuration file under /core/config.php
 With all the comments removed, the default content looks like this : 
-```
+```php
 <?php
 
 const SECTIONS = array(
