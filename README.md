@@ -14,8 +14,6 @@ It uses [Klein](https://github.com/klein/klein.php) library as it's internal rou
 Before you start using this framework, you sould edit the configuration file under /core/config.php
 With all the comments removed, the default content looks like this : 
 ```php
-<?php
-
 const SECTIONS = array(
     'sample'
 );
@@ -29,12 +27,24 @@ const LOG_REQUESTS = true;
 const DATABASE_CONFIG = array(
     'SGBD' => 'mysql',
     'HOST' => 'localhost',
-    'DATABASE' => 'rest_api',
-    'USER' => 'someuser',
-    'PASSWORD' => 'securepassword'
+    'DATABASE' => '',
+    'USER' => '',
+    'PASSWORD' => ''
 );
 
 const SIGNATURE_KEY = "Put a strong key here";
 
 ```
-The `SECTION` constant lists the sections of your application, each one representing the upper level of each endpoint e.g given the _/users/5/edit_ endpoint, _users_ would represent one section of your application
+The `SECTION` constant lists the __sections__ of your application, each one representing the upper level of each endpoint e.g given the **_/users/5/edit_** endpoint, **_users_** would represent one section of your application.
+When you add a new section (e.g admin), the framework automatically generates the controller file under **_/controllers/_** folder named _your-section-name.php_. By convention, all your controllers should be named the same as your section otherwise they'll be ignored.
+
+The default content of a controller looks like this
+```php
+$this->respond('[*]?', function ($request, $response) {
+   return 'This is the default controller';
+});
+```
+
+As mentioned ealier, the framework uses [Klein](https://github.com/klein/klein.php) as it's internal controller. Fell free to check their documentation for detailled informations.
+
+
