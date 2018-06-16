@@ -10,8 +10,7 @@ class CustomPDO {
     /**
      * @return mixed
      */
-    public static function getInstance()
-    {
+    public static function getInstance() {
         if ( self::$_instance== null ){
             self::$_instance = new PDO(DATABASE_CONFIG['SGBD'].":host=".DATABASE_CONFIG['HOST'].";dbname=".DATABASE_CONFIG['DATABASE'], DATABASE_CONFIG['USER'], DATABASE_CONFIG['PASSWORD'],
                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));

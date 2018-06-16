@@ -53,9 +53,10 @@ foreach(SECTIONS as $controller) {
  */
 $klein->onHttpError(function ($code, $router) {
     if ($code >= 400 && $code < 500) {
-        $router->response()->body(
-            'Oh no, a bad error happened that caused a '. $code
-        );
+        $router->response()->body(json_encode(array(
+            'success' => false,
+            'message' => 'Oh no, a bad error happened that caused a '. $code
+        )));
     } elseif ($code >= 500 && $code <= 599) {
         error_log('uhhh, something bad happened');
     }
@@ -63,13 +64,23 @@ $klein->onHttpError(function ($code, $router) {
 
 $klein->dispatch();
 
+
 /**
- * Logging the response
- *
- * MODIFY LE FORMAT OF THE FILE
- *
+ * Saving the response into a variable
  */
 $response = ob_get_clean();
-LogHandler::logResponse( $response );
 
+/**
+ * If log recording is enabled, then each request to
+ * the API is saved to the database
+ */
+if (LOG_REQUESTS) {
+    $requestLog = new RequestLog();
+    $requestLog->setResponse($response);
+    RequestLogService::save($requestLog);
+}
+
+/**
+ * Finally, we return the response to the user
+ */
 echo $response;
