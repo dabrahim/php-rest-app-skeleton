@@ -1,7 +1,5 @@
 <?php
 
-require ROOT_DIR . '/core/utils/LogHandler.class.php';
-
 spl_autoload_register(function ($class) {
     if ( preg_match('/Service$/', $class) ) {
         require("./persistence/service/" . $class . ".class.php");

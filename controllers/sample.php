@@ -44,3 +44,31 @@ $this->respond('POST', '/login', function ($request, $response, \Klein\ServicePr
 
     $response->json( $result );
 });
+
+/**
+ * This sample route takes the token in the Header and tries to
+ * decode it. If it's a success, it returns the payloads otherwise
+ * it sends back an error message to the issuer
+ */
+$this->respond('POST', '/token/decode', function ($request, $response, \Klein\ServiceProvider $service, $app) {
+    $token = $app->getToken;
+    try {
+        $payload = $service->decodeToken($token);
+        $response->json(array(
+            'success' => true,
+            'payload' => $payload
+        ));
+
+    } catch (Exception $e) {
+        if (DEBUG) {
+            $message = 'Error decoding the token: ' . $e->getMessage();
+        } else {
+            $message = "Incorrect token";
+        }
+
+        $response->json(array(
+            'success' => false,
+            'message' => $message
+        ));
+    }
+});
