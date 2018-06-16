@@ -107,4 +107,7 @@ class UserService implements UserDAO {
 }
 ```
 
-Then, you can for instanciate the `User` class from any controller. The framework automatically handles the imports so you won't have to do it manually anymore.  
+Then, you can for instanciate the `User` class from any controller. The framework automatically handles the imports so you won't have to do it manually anymore.
+
+## Contribution
+The project is still under developpement so feel free to send a fork request for adding new features.
