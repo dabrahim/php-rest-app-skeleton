@@ -35,6 +35,16 @@ const BASE_DIR = 'rest-app-skeleton/';
  */
 const DEBUG = true;
 
+/**
+ * Should the framework save logs or not
+ * By default it saves the logs to the database
+ */
+const SAVE_LOGS = true;
+
+/**
+ * Database setup
+ *
+ */
 const DATABASE_CONFIG = array(
     'SGBD' => 'mysql',
     'HOST' => 'localhost',
