@@ -64,3 +64,47 @@ The framework uses PDO as it's API for database access. To get an instance of it
 
 
 Finally, the `SIGNATURE_KEY` constant represents the secret key used to sign your **JSON Web Tokens**. Choose a strong one and keep it secret.
+
+## Persistence management
+The framework has no _ORM tool_ yet so it uses **DAO/DTO** pattern to handle persistency. The following explains how to organize your persistency layer, we asume that you already have a basic understanding of the pattern mentionned earlier otherwise we'd recommand learning more about it before using this framework.
+
+To create and persist objects of your model, you should follow a set of simple rules :
+
+1. Every PHP class should end with .class.php
+2. All your model objects (DTO) should be under **/persistence/model** directory
+3. Your DAO objects should go under **/persistence/interface** and end with _DAO_
+4. Your DAO implements should go under **/persistence/service** and end with _Service_
+
+### Exemple
+_User.class.php_
+```php
+class User {
+    private $_nom;
+    
+    public function getNom () {
+        return $this->_nom;
+    }
+    
+    public function setNom ($nom) {
+        $this->_nom = $nom;
+    }
+}
+```
+
+_UserDAO.class.php_
+```php
+interface UserDAO {
+    public function create (User $user);
+}
+```
+
+_UserService.class.php_
+```php
+class UserService implements UserDAO {
+    public function create (User $user) {
+        // Class implementation
+    }
+}
+```
+
+Then, you can for instanciate the `User` class from any controller. The framework automatically handles the imports so you won't have to do it manually anymore.  
