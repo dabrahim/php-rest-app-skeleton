@@ -65,7 +65,7 @@ The framework uses PDO as it's API for database access. To get an instance of it
 
 Finally, the `SIGNATURE_KEY` constant represents the secret key used to sign your **JSON Web Tokens**. Choose a strong one and keep it secret.
 
-## Persistence management
+## Persistency management
 The framework has no _ORM tool_ yet so it uses **DAO/DTO** pattern to handle persistency. The following explains how to organize your persistency layer, we asume that you already have a basic understanding of the pattern mentionned earlier otherwise we'd recommand learning more about it before using this framework.
 
 To create and persist objects of your model, you should follow a set of simple rules :
