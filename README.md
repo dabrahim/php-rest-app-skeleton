@@ -48,14 +48,19 @@ $this->respond('[*]?', function ($request, $response) {
 As mentioned ealier, the framework uses [Klein](https://github.com/klein/klein.php) as it's internal controller. Fell free to check their documentation for more detailled informations.
 Basically what it says it to return _this is the default controller_ to every request to the given endpoint.
 
-The `BASE_DIR` constant is used to indicate the path to your project directory if it's not located into the root folder (which is served by default by for server). If for example your project is under **_/somefolder/anotherfolder_** then that woud be your `BASE_DIR` value.
+
+The `BASE_DIR` constant is used to indicate the path to your project directory if it's not located into the root folder (which is served by default by the server). If for example your project is under **_/somefolder/anotherfolder_** then that would be your _BASE_DIR_ value.
 Is the project is ready to be deployed, then leave it's value to an empty string.
+
 
 The `DEBUG` constant which is by default true tells to the framework wether you're in developpement mode or in deployement mode. It prevents from giving sensitive informations to the user when the API is deployed.
 
+
 The `LOG_REQUESTS` indicates wether all the received requests should be logged to the database (if it's correctly set up) or not. It defautls to true and automatically creates the required tables into the database.
 
+
 The `DATABASE_CONFIG` indicates the database configuration. You should provide all the required informations if you want to connect a database to your application. 
-The framework uses PDO as it's API for database access. To get an instance of it, just call `CustomPDO::getInstance()` from any controller.
+The framework uses PDO as it's API for database access. To get an instance of it, just call **CustomPDO::getInstance()** from any controller.
+
 
 Finally, the `SIGNATURE_KEY` constant represents the secret key used to sign your **JSON Web Tokens**. Choose a strong one and keep it secret.
