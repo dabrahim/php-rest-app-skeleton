@@ -1,9 +1,13 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/core/autoload.php';
-require __DIR__ . '/core/config.php';
-require __DIR__ . '/persistence/CustomPDO.class.php';
+ob_start();
+
+const ROOT_DIR = __DIR__;
+
+require ROOT_DIR . '/vendor/autoload.php';
+require ROOT_DIR . '/core/autoload.php';
+require ROOT_DIR . '/core/config.php';
+require ROOT_DIR . '/persistence/CustomPDO.class.php';
 
 $klein = new \Klein\Klein();
 
@@ -58,3 +62,14 @@ $klein->onHttpError(function ($code, $router) {
 });
 
 $klein->dispatch();
+
+/**
+ * Logging the response
+ *
+ * MODIFY LE FORMAT OF THE FILE
+ *
+ */
+$response = ob_get_clean();
+LogHandler::logResponse( $response );
+
+echo $response;
