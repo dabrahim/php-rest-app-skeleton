@@ -109,7 +109,7 @@ class UserService implements UserDAO {
 
 Then, you can for instanciate the `User` class from any controller. The framework automatically handles the imports so you won't have to do it manually anymore.
 
-##Examples
+## Examples
 Let's consider this controller under the **users** section
 ```php
 $this->respond('POST', '/login', function ($request, $response, $service) {
@@ -145,11 +145,11 @@ $this->respond('POST', '/login', function ($request, $response, $service) {
     $response->json( $result );
 });
 ```
-An example of bad request to **your-hostname/users/login** would give
+A bad request to **your-hostname/users/login** would give
 ```json
 {
     "success": false,
-    "message": "Error decoding the token: Signature verification failed"
+    "message": "Login or password incorrect"
 }
 ```
 
