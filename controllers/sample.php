@@ -50,9 +50,9 @@ $this->respond('POST', '/login', function ($request, $response, \Klein\ServicePr
  * decode it. If it's a success, it returns the payloads otherwise
  * it sends back an error message to the issuer
  */
-$this->respond('/token/decode', function ($request, $response, \Klein\ServiceProvider $service, $app) {
+$this->respond('/token/decode', function ($request, $response, \Klein\ServiceProvider $service) {
     try {
-        $token = $app->getToken;
+        $token = $service->getToken();
 
         $payload = $service->decodeToken($token);
 
@@ -74,17 +74,3 @@ $this->respond('/token/decode', function ($request, $response, \Klein\ServicePro
         ));
     }
 });
-
-/*$this->respond('/test', function (\Klein\Request $request, \Klein\Response $response, \Klein\ServiceProvider $service) {
-    $token = null;
-    try {
-        $token = $service->getToken();
-
-    } catch (Exception $e) {
-        $token = $e->getMessage();
-    }
-
-   $response->json(array(
-       'token' => $token
-   ));
-});*/
