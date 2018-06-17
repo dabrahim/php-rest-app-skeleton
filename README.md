@@ -1,4 +1,4 @@
-# PHP RESTFul App skeleton
+# PHP RESTFul app skeleton
 
 The goal of this project is to provide a _simple and easy to use_ framework to facilitate RESTFul app development with PHP.
 In a nutshell, it's a set of libraries gathered together to create a simple framework based on the MVC pattern. It uses [Klein](https://github.com/klein/klein.php) library as it's internal router and also integrates a bunch of features such as [jwt](https://jwt.io/) management.
