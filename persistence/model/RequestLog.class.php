@@ -22,15 +22,12 @@ class RequestLog {
         $this->_requestParams = json_encode($_REQUEST);
         $this->_senderIpAdress = $_SERVER['REMOTE_ADDR'];
         $this->_responseCode = http_response_code();
-
-        $service = new \Klein\ServiceProvider();
-        $token = null;
-        try{
-            $token = $service->getToken();
-        } catch (\Exception $e) {
-            $token = 'NONE';
+        $headers = apache_request_headers();
+        if (isset($headers['Authorization'])) {
+            $this->_requestAuthorization = $headers['Authorization'];
+        } else {
+            $this->_requestAuthorization = 'NONE';
         }
-        $this->_requestAuthorization = $token;
     }
 
     /**
