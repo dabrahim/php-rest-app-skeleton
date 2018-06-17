@@ -73,7 +73,7 @@ To create and persist objects of your model, you should follow a set of simple r
 1. Every PHP class should end with .class.php
 2. All your model objects (DTO) should be under **/persistence/model** directory
 3. Your DAO objects should go under **/persistence/interface** and end with _DAO_
-4. Your DAO implements should go under **/persistence/service** and end with _Service_
+4. Your DAO implementations should go under **/persistence/service** and end with _Service_
 
 ### Example
 _User.class.php_
