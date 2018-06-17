@@ -7,7 +7,6 @@ const ROOT_DIR = __DIR__;
 require ROOT_DIR . '/vendor/autoload.php';
 require ROOT_DIR . '/core/autoload.php';
 require ROOT_DIR . '/core/config.php';
-require ROOT_DIR . '/persistence/CustomPDO.class.php';
 
 $klein = new \Klein\Klein();
 

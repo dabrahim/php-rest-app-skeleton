@@ -11,3 +11,5 @@ spl_autoload_register(function ($class) {
         require ("./persistence/model/".$class.".class.php");
     }
 });
+
+require ROOT_DIR . './persistence/CustomPDO.class.php';

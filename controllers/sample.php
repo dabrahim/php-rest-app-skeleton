@@ -46,11 +46,11 @@ $this->respond('POST', '/login', function ($request, $response, \Klein\ServicePr
 });
 
 /**
- * This sample route takes the token in the Header and tries to
+ * This sample route retrieves the token in the Authorization header and tries to
  * decode it. If it's a success, it returns the payloads otherwise
  * it sends back an error message to the issuer
  */
-$this->respond('/token/decode', function ($request, $response, \Klein\ServiceProvider $service) {
+$this->respond('POST' ,'/token/decode', function ($request, $response, \Klein\ServiceProvider $service) {
     try {
         $token = $service->getToken();
 

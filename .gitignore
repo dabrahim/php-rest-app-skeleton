@@ -2,4 +2,3 @@
 vendor/
 composer.lock
 core/logs.txt
-core/utils

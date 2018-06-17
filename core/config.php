@@ -55,6 +55,6 @@ const DATABASE_CONFIG = array(
 
 /**
  * Your jwt private signature key
- * The HMAC SHA256 Algorith will be used to sign your tokens
+ * The HMAC SHA256 Algorithm will be used to sign your tokens
  */
 const SIGNATURE_KEY = "Put a strong key here";
