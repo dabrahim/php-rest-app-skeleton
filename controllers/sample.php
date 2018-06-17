@@ -74,3 +74,17 @@ $this->respond('/token/decode', function ($request, $response, \Klein\ServicePro
         ));
     }
 });
+
+/*$this->respond('/test', function (\Klein\Request $request, \Klein\Response $response, \Klein\ServiceProvider $service) {
+    $token = null;
+    try {
+        $token = $service->getToken();
+
+    } catch (Exception $e) {
+        $token = $e->getMessage();
+    }
+
+   $response->json(array(
+       'token' => $token
+   ));
+});*/
