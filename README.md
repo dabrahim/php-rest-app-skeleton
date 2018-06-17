@@ -102,7 +102,7 @@ _UserService.class.php_
 ```php
 class UserService implements UserDAO {
     public function create (User $user) {
-        // Class implementation
+        // Method implementation
     }
 }
 ```
