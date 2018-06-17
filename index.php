@@ -2,11 +2,9 @@
 
 ob_start();
 
-const ROOT_DIR = __DIR__;
-
-require ROOT_DIR . '/vendor/autoload.php';
-require ROOT_DIR . '/core/autoload.php';
-require ROOT_DIR . '/core/config.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/core/autoload.php';
+require __DIR__ . '/core/config.php';
 
 $klein = new \Klein\Klein();
 
