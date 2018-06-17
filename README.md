@@ -36,7 +36,7 @@ const SIGNATURE_KEY = "Put a strong key here";
 
 ```
 The `SECTION` constant allows you to list the different _sections_ of your application, each of which representing the upper _level_ or _block_ of an endpoint (or route).
-When you add a new section, the framework automatically generates the controller file under **_/controllers_** folder named **_your-section-name.php_**. By convention, all your controllers should be named the same as your section otherwise they'll be ignored.
+When you add a new section, the framework automatically generates the controller file under **_/controllers_** folder and names it **_your-section-name.php_**. By convention, all your controllers should be named the same as your section otherwise they'll be ignored.
 
 The default content of a controller looks like this
 ```php
@@ -65,8 +65,8 @@ The framework uses PDO API for database access. To get an instance of it, just c
 
 Finally, the `SIGNATURE_KEY` constant holds the secret key that'll be used to sign your **JSON Web Tokens**. Choose a strong one and keep it secret.
 
-## Persistency management
-The framework has no _ORM tool_ yet so it uses the **DAO/DTO** pattern to handle persistence. The following explains how to organize your persistence layer, we assume that you already have a basic understanding of the pattern mentioned earlier otherwise we recommend you to learn more about it before using this framework.
+## Persistence management
+The framework has no [_ORM tool_](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm) yet so it uses the **DAO/DTO** pattern to handle persistence. The following explains how to organize your persistence layer, we assume that you already have a basic understanding of [this](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm) pattern otherwise we recommend you to learn more about it before using this framework.
 
 To create and persist objects of your model, you should follow a set of simple rules :
 
