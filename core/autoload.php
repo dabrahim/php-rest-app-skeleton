@@ -12,4 +12,4 @@ spl_autoload_register(function ($class) {
     }
 });
 
-require ROOT_DIR . './persistence/CustomPDO.class.php';
+require ROOT_DIR . '/persistence/CustomPDO.class.php';
