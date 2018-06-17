@@ -50,10 +50,12 @@ $this->respond('POST', '/login', function ($request, $response, \Klein\ServicePr
  * decode it. If it's a success, it returns the payloads otherwise
  * it sends back an error message to the issuer
  */
-$this->respond('POST', '/token/decode', function ($request, $response, \Klein\ServiceProvider $service, $app) {
-    $token = $app->getToken;
+$this->respond('/token/decode', function ($request, $response, \Klein\ServiceProvider $service, $app) {
     try {
+        $token = $app->getToken;
+
         $payload = $service->decodeToken($token);
+
         $response->json(array(
             'success' => true,
             'payload' => $payload
