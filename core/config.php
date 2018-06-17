@@ -39,7 +39,7 @@ const DEBUG = true;
  * Should the framework save logs or not
  * By default it saves the logs to the database
  */
-const LOG_REQUESTS = true;
+const LOG_REQUESTS = false;
 
 /**
  * Database setup
@@ -48,9 +48,9 @@ const LOG_REQUESTS = true;
 const DATABASE_CONFIG = array(
     'SGBD' => 'mysql',
     'HOST' => 'localhost',
-    'DATABASE' => 'rest_api',
-    'USER' => 'someuser',
-    'PASSWORD' => 'securepassword'
+    'DATABASE' => '',
+    'USER' => '',
+    'PASSWORD' => ''
 );
 
 /**
